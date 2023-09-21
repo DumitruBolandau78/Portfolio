@@ -1,6 +1,7 @@
 const headerHeight = document.querySelector('header.header').clientHeight;
 const hamburger = document.querySelector('.hamburger');
 const closeHamburger = document.querySelector('.close');
+const paperWindow = document.querySelector('#paper-window');
 
 let topPosition = (headerHeight - hamburger.clientHeight) / 2;
 hamburger.style.top = `${topPosition}px`;
@@ -23,8 +24,6 @@ hamburger.addEventListener('click', () => {
 closeHamburger.addEventListener('click', () => {
   enableScroll();
 });
-
-const paperWindow = document.querySelector('#paper-window');
 
 window.addEventListener('click', (e) => {
   const block = e.target.closest('#paper-window');
@@ -79,7 +78,7 @@ $(document).ready(function(topPosition) {
     updateTransformOrigin: function() {
       scrollTop = this.$window.scrollTop();
       equation = (scrollTop + this.offset) / this.pageHeight * 100;
-      this.$paperFront.css('transform-origin', 'center ' + equation + '%');
+      this.$paperFront.css('transform-origin', 'center' + equation + '%');
     },
     hamburgerFix: function(opening) {
       if(opening) {

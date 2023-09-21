@@ -39,7 +39,8 @@
   pointer-events: none;
 }
 #paper-window.tilt #paper-front {
-  transform: rotate(10deg) translateZ(0);
+  transform: rotate(10deg) translateZ(0) translateX(120px);
+  transform-origin: bottom;
 }
 
 #paper-front {

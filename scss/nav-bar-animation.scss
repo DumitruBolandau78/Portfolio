@@ -39,11 +39,15 @@ $primary-color: #5C62EC;
   position: relative; 
   overflow: hidden;
   z-index: 2;
+  // transform-origin: bottom;
   
   &.tilt {
     overflow: hidden;
     pointer-events: none;
-    #paper-front { transform: rotate(10deg) translateZ(0); }
+    #paper-front { 
+      transform: rotate(10deg) translateZ(0) translateX(120px);
+      transform-origin: bottom;
+    }
   }
 }
 
