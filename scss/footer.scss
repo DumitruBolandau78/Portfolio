@@ -1,0 +1,32 @@
+footer.footer {
+    background-color: #171718;
+    padding: 40px 10px;
+
+    .inner {
+        max-width: 1440px;
+        width: 100%;
+        margin: 0 auto;
+
+        .copy-right {
+            display: flex;
+            align-items: center;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 16px;
+            justify-content: center;
+            font-family: 'Poppins', sans-serif !important;
+        }
+    }
+}
+
+@media (max-width: 439px) {
+    .footer .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        a {
+            margin-bottom: 20px !important;
+        }
+    }
+}

@@ -1,0 +1,201 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.info-about-me-wrapper {
+  background-color: #171718;
+  position: relative;
+  z-index: 1;
+  background-image: url("/images/abstract.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80vh;
+  min-height: 100vh;
+  padding: 0 10px;
+}
+.info-about-me-wrapper .info-about-me-inner {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.info-about-me-wrapper .info-about-me-inner .title h2 {
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+  font-size: 35px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif !important;
+}
+.info-about-me-wrapper .info-about-me-inner .title h1 {
+  color: #fff;
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+}
+.info-about-me-wrapper .info-about-me-inner .title h1 .my-name {
+  font-family: "DM Sans", sans-serif !important;
+  color: #5C62EC;
+}
+.info-about-me-wrapper .info-about-me-inner .passion {
+  color: #fff;
+  margin-top: 30px;
+  font-family: "DM Sans", sans-serif !important;
+}
+.info-about-me-wrapper .info-about-me-inner .download-cv {
+  margin-top: 30px;
+}
+.info-about-me-wrapper .info-about-me-inner .download-cv button {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif !important;
+}
+
+.projects-wrapper {
+  padding: 40px 15px;
+  margin: 0 auto;
+  max-width: 1400px;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.projects-wrapper .title h1 {
+  color: #5C62EC;
+  font-size: 50px;
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+}
+.projects-wrapper .projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.projects-wrapper .projects .project {
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: 5px;
+  position: relative;
+}
+.projects-wrapper .projects .project:hover .description {
+  opacity: 1;
+}
+.projects-wrapper .projects .project:hover img {
+  filter: brightness(40%);
+}
+.projects-wrapper .projects .project .title {
+  font-family: "DM Sans", sans-serif !important;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.projects-wrapper .projects .project img {
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.4s ease-in;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.projects-wrapper .projects .project .description {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  color: #fff;
+  font-size: 20px;
+  opacity: 0;
+  transition: 0.4s ease-in;
+}
+
+.skills-wrapper, .contacts-wrapper {
+  width: 100%;
+}
+.skills-wrapper .inner, .contacts-wrapper .inner {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: 15px;
+}
+.skills-wrapper .inner .title, .contacts-wrapper .inner .title {
+  margin-bottom: 10px;
+}
+.skills-wrapper .inner .title h1, .contacts-wrapper .inner .title h1 {
+  color: #5C62EC;
+  margin: 0;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+}
+.skills-wrapper .inner .sub-title, .contacts-wrapper .inner .sub-title {
+  margin: 20px 0;
+}
+.skills-wrapper .inner .sub-title h2, .contacts-wrapper .inner .sub-title h2 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 35px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif !important;
+}
+.skills-wrapper .inner .info, .contacts-wrapper .inner .info {
+  font-family: "DM Sans", sans-serif !important;
+}
+.skills-wrapper .inner a, .contacts-wrapper .inner a {
+  text-decoration: none;
+  color: #000;
+}
+.skills-wrapper .inner .my10, .contacts-wrapper .inner .my10 {
+  margin: 10px 0;
+}
+
+@media (max-width: 992px) {
+  .skills-wrapper .inner, .contacts-wrapper .inner {
+    min-height: 100vh;
+  }
+  .project .description {
+    opacity: 1 !important;
+  }
+  .project img {
+    filter: brightness(60%) !important;
+  }
+}
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 576px) {
+  .projects {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}/*# sourceMappingURL=style.css.map */
