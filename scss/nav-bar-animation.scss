@@ -1,0 +1,131 @@
+$primary-color: #5C62EC;
+
+#paper-back {
+  width: 100%;
+  height: 100vh;
+  background-color: $primary-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 33px;
+  background-color: #171718;
+
+  nav {
+    padding: 120px 34px;
+
+    ul li{
+        list-style: none;
+        width: 100%;
+        display: flex;
+    }
+    a {
+      display: inline-block;
+      margin-bottom: 25px;
+      text-decoration: none;
+      color: #fff;
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 25px;
+
+      &.active {
+        border-bottom: 2px solid #fff !important;
+      }
+    }
+  }
+}
+
+//prevents the scrolling when the menu is open
+#paper-window {
+  width: 100%;
+  position: relative; 
+  overflow: hidden;
+  z-index: 2;
+  // transform-origin: bottom;
+  
+  &.tilt {
+    overflow: hidden;
+    pointer-events: none;
+    #paper-front { 
+      transform: rotate(10deg) translateZ(0) translateX(120px);
+      transform-origin: bottom;
+    }
+  }
+}
+
+//this is what actually rotates
+#paper-front {
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(black, 0.7);
+  transform-origin: center 70%;
+  transition: all 0.3s ease;
+}
+
+//actual content
+#container {
+  section {
+    text-align: center;
+    &:first-of-type {
+      h1 { font-size: 45px; }
+      p { font-size: 25px; }
+    }
+    &:nth-of-type(2n) {
+      background-color: lighten($primary-color, 75%);
+    }
+  }
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 4;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 34px;
+  cursor: pointer;
+  user-select: none;
+  display: none;
+
+  span {
+    position: relative;
+    
+    &, &:before, &:after {
+      display: block;
+      width: 45px;
+      height: 6px;
+      background-color: $primary-color;
+      border-radius: 2px;
+    }
+    
+    &:before, &:after {
+      content: '';
+      position: absolute;
+    }
+    &:before { bottom: -14px; }
+    &:after { bottom: -28px; }
+    
+  }
+}
+
+.close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 34px;
+  cursor: pointer;
+  
+  &:before, &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 45px;
+      height: 6px;
+      top: 50%;
+      background-color: white;
+      border-radius: 2px;
+    }
+    &:before { transform: translateY(-50%) rotate(45deg); }
+    &:after { transform: translateY(-50%) rotate(-45deg); }
+}

@@ -1,0 +1,134 @@
+@mixin poppins {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+@mixin dm-sans {
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+header.header {
+  background: #171718;
+  padding: 0 15px;
+  box-shadow: 0 2px 2px -2px gray;
+  position: relative;
+  z-index: 2;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .header-inner {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    ul li {
+      list-style: none;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        @include poppins();
+
+        span {
+          color: #fff;
+          font-size: 28px;
+
+          &:first-child {
+            font-weight: 700;
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+
+    nav.navigation {
+      display: flex;
+      align-items: center;
+
+      .menu {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        @include poppins();
+        font-weight: normal;
+      }
+
+      .menu-item {
+        position: relative;
+        cursor: pointer;
+      }
+
+      .menu-item .wee {
+        height: 2px;
+        width: 100%;
+        background-color: #5C62EC;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: 0.75s;
+      }
+
+      .menu-item h6 {
+        margin: 0;
+        padding: 0 2rem .5rem;
+        font-size: 1rem;
+        color: #fff;
+        transition: 0.75s;
+        font-weight: normal;
+      }
+
+      .menu-item:hover a h6 {
+        color: #5C62EC;
+      }
+
+      .menu .current-menu-item a h6 {
+        color: #5C62EC;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header-inner {
+    justify-content: end !important;
+  }
+
+  .menu {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: block !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .logo a span {
+    font-size: 23px !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .logo a span {
+    font-size: 20px !important;
+  }
+}

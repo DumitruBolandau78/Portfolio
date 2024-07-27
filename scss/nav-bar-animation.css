@@ -1,0 +1,126 @@
+#paper-back {
+  width: 100%;
+  height: 100vh;
+  background-color: #5C62EC;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 33px;
+  background-color: #171718;
+}
+#paper-back nav {
+  padding: 120px 34px;
+}
+#paper-back nav ul li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+}
+#paper-back nav a {
+  display: inline-block;
+  margin-bottom: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 25px;
+}
+#paper-back nav a.active {
+  border-bottom: 2px solid #fff !important;
+}
+
+#paper-window {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+#paper-window.tilt {
+  overflow: hidden;
+  pointer-events: none;
+}
+#paper-window.tilt #paper-front {
+  transform: rotate(10deg) translateZ(0) translateX(120px);
+  transform-origin: bottom;
+}
+
+#paper-front {
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  transform-origin: center 70%;
+  transition: all 0.3s ease;
+}
+
+#container section {
+  text-align: center;
+}
+#container section:first-of-type h1 {
+  font-size: 45px;
+}
+#container section:first-of-type p {
+  font-size: 25px;
+}
+#container section:nth-of-type(2n) {
+  background-color: white;
+}
+
+.hamburger {
+  position: fixed;
+  z-index: 4;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 34px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: none;
+}
+.hamburger span {
+  position: relative;
+}
+.hamburger span, .hamburger span:before, .hamburger span:after {
+  display: block;
+  width: 45px;
+  height: 6px;
+  background-color: #5C62EC;
+  border-radius: 2px;
+}
+.hamburger span:before, .hamburger span:after {
+  content: "";
+  position: absolute;
+}
+.hamburger span:before {
+  bottom: -14px;
+}
+.hamburger span:after {
+  bottom: -28px;
+}
+
+.close {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 34px;
+  cursor: pointer;
+}
+.close:before, .close:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 45px;
+  height: 6px;
+  top: 50%;
+  background-color: white;
+  border-radius: 2px;
+}
+.close:before {
+  transform: translateY(-50%) rotate(45deg);
+}
+.close:after {
+  transform: translateY(-50%) rotate(-45deg);
+}/*# sourceMappingURL=nav-bar-animation.css.map */
